@@ -7,9 +7,17 @@ function main() {
 
         // pega o numero do usuario
         let num;
-        do {
+        while(true){
             num = Number(prompt(`Digite um número:`));
-        } while (isNaN(num));
+
+            // Ve se num é um numero e quebra o looping caso seja
+            if (Number.isInteger(num)) {
+            break;
+            }
+
+            // Se chegou aqui, alerta que não era um numero e volta o looping
+            alert("Por favor, digite um número inteiro.");
+        }
 
         // calcula o fatorial
         let numfatorial = setFatorial(num);        
